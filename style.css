@@ -1,0 +1,705 @@
+/* =========================================================
+   CUMPLEAÑOS DE IRMA — HOJA DE ESTILOS (versión simple y liviana)
+   Sin fondo fotográfico, sin partículas, sin efectos de blur.
+   Tipografía: Playfair Display (display) + Poppins (texto).
+   ========================================================= */
+
+/* ---------- 1. VARIABLES / TOKENS ---------- */
+:root {
+  --color-white: #ffffff;
+  --color-bg: #fbfcfe;
+  --color-celeste: #8fbfe0;
+  --color-celeste-suave: #eaf4fb;
+  --color-azul: #14324f;
+  --color-azul-2: #1f4569;
+  --color-dorado: #c6a05c;
+  --color-text: #17263a;
+  --color-text-soft: #5b6b7c;
+  --color-line: rgba(20, 50, 79, 0.14);
+  --color-verde: #3f8f5f;
+  --color-rojo: #b5493f;
+
+  --font-display: "Playfair Display", serif;
+  --font-body: "Poppins", sans-serif;
+
+  --section-padding: clamp(3rem, 7vw, 5rem);
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+
+  --shadow-soft: 0 16px 34px -18px rgba(20, 50, 79, 0.25);
+  --shadow-card: 0 8px 20px -12px rgba(20, 50, 79, 0.2);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- 2. RESET ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Foco visible accesible en toda la página */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-dorado);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ---------- 3. UTILIDADES ---------- */
+.container {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.container--narrow {
+  max-width: 700px;
+}
+
+.section {
+  padding: var(--section-padding) 0;
+}
+
+.section__eyebrow {
+  text-align: center;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-dorado);
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+.section__title {
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+  color: var(--color-azul);
+  margin-bottom: 2.4rem;
+}
+
+/* Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.btn--primary {
+  background: var(--color-azul);
+  color: var(--color-white);
+  box-shadow: 0 10px 22px -10px rgba(20, 50, 79, 0.5);
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+}
+
+.btn--primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn--ghost {
+  margin-top: 1.6rem;
+  border: 1.5px solid var(--color-azul);
+  color: var(--color-azul);
+  padding: 0.6rem 1.5rem;
+  font-size: 0.85rem;
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn--ghost:hover {
+  background: var(--color-azul);
+  color: var(--color-white);
+}
+
+/* ---------- 4. NAVBAR ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding: 0.9rem 0;
+  background: rgba(251, 252, 254, 0.94);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.navbar__inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__brand {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-azul);
+}
+
+.navbar__brand-dot {
+  color: var(--color-dorado);
+}
+
+.navbar__cta {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--color-azul);
+  color: var(--color-azul);
+  transition: background 0.25s var(--ease), color 0.25s var(--ease);
+}
+
+.navbar__cta:hover {
+  background: var(--color-azul);
+  color: var(--color-white);
+}
+
+/* ---------- 5. HERO (solo color y tipografía, sin foto) ---------- */
+.hero {
+  background: linear-gradient(160deg, var(--color-azul) 0%, var(--color-azul-2) 100%);
+  padding: clamp(3.5rem, 12vw, 6rem) 1.25rem;
+  text-align: center;
+}
+
+.hero__content {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.hero__eyebrow {
+  color: var(--color-celeste-suave);
+  font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+  font-weight: 300;
+  font-style: italic;
+  font-family: var(--font-display);
+  margin-bottom: 0.9rem;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  color: var(--color-white);
+  font-size: clamp(1.9rem, 6vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 1.8rem;
+}
+
+.hero__name-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 2.2rem;
+}
+
+.hero__name {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 9vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-white);
+}
+
+.hero__name::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  margin: 0.5rem auto 0;
+  background: var(--color-dorado);
+}
+
+.hero__age {
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-dorado);
+}
+
+/* ---------- 6. DIVISOR (elemento firma: sol de líneas) ---------- */
+.divider {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  background: var(--color-bg);
+}
+
+.divider__sun {
+  width: 48px;
+  height: 48px;
+}
+
+.divider__sun-core {
+  fill: none;
+  stroke: var(--color-dorado);
+  stroke-width: 2.5;
+}
+
+.divider__sun-rays line {
+  stroke: var(--color-dorado);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  opacity: 0.75;
+}
+
+/* ---------- 7. CONTADOR ---------- */
+.countdown {
+  background: var(--color-bg);
+}
+
+.countdown__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.countdown__unit {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 0.4rem;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+}
+
+.countdown__number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  color: var(--color-azul);
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown__label {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+}
+
+.countdown__today {
+  text-align: center;
+  margin-top: 1.8rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  color: var(--color-dorado);
+  font-weight: 600;
+}
+
+/* ---------- 8. MENSAJE PERSONAL ---------- */
+.message {
+  background: var(--color-celeste-suave);
+}
+
+.message__card {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.8rem, 5vw, 2.6rem);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+.message__text {
+  font-size: clamp(0.98rem, 2vw, 1.1rem);
+  color: var(--color-text);
+  font-weight: 300;
+  line-height: 1.85;
+}
+
+.message__signature {
+  display: block;
+  margin-top: 1.4rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--color-azul);
+}
+
+/* ---------- 9. EVENTO ---------- */
+.event {
+  background: var(--color-bg);
+}
+
+.event__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.1rem;
+}
+
+.event__item {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: 1.7rem 1.3rem;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+}
+
+.event__icon {
+  font-size: 1.9rem;
+  margin-bottom: 0.7rem;
+}
+
+.event__label {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--color-azul);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.event__value {
+  color: var(--color-text-soft);
+  font-size: 0.92rem;
+}
+
+.event__value--soft {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+/* ---------- 10. FORMULARIO RSVP ---------- */
+.rsvp {
+  background: var(--color-celeste-suave);
+}
+
+.rsvp__form {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 5vw, 2.4rem);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.rsvp__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.rsvp__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.rsvp__field label,
+.rsvp__fieldset legend {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-azul);
+}
+
+.rsvp__field input[type="text"],
+.rsvp__field textarea {
+  border: 1.5px solid var(--color-line);
+  background: var(--color-white);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.9rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  transition: border-color 0.2s var(--ease);
+  resize: vertical;
+}
+
+.rsvp__field input[type="text"]:focus,
+.rsvp__field textarea:focus {
+  border-color: var(--color-celeste);
+  outline: none;
+}
+
+.rsvp__fieldset {
+  border: none;
+  padding: 0;
+}
+
+.rsvp__options {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.rsvp__option {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--color-line);
+  background: var(--color-white);
+  font-size: 0.86rem;
+  cursor: pointer;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.rsvp__option input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.rsvp__option:has(input:checked) {
+  background: var(--color-azul);
+  border-color: var(--color-azul);
+  color: var(--color-white);
+}
+
+.rsvp__submit {
+  align-self: center;
+  margin-top: 0.6rem;
+  padding: 1rem 2.8rem;
+  font-size: 1rem;
+}
+
+.rsvp__status {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-text-soft);
+}
+
+.rsvp__status--error {
+  color: var(--color-rojo);
+}
+
+/* ---------- 11. LISTA DE INVITADOS ---------- */
+.guests {
+  background: var(--color-bg);
+}
+
+.guests__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.guests__loading {
+  text-align: center;
+  color: var(--color-text-soft);
+  font-size: 0.9rem;
+}
+
+.guests__empty,
+.guests__error {
+  text-align: center;
+  color: var(--color-text-soft);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.guests__error {
+  color: var(--color-rojo);
+}
+
+.guest-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.3rem;
+  box-shadow: var(--shadow-card);
+}
+
+.guest-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.guest-card__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-azul);
+  font-size: 1rem;
+}
+
+.guest-card__meta {
+  font-size: 0.8rem;
+  color: var(--color-text-soft);
+}
+
+.guest-card__status {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+}
+
+.guest-card__status--si {
+  background: rgba(63, 143, 95, 0.12);
+  color: var(--color-verde);
+}
+
+.guest-card__status--no {
+  background: rgba(181, 73, 63, 0.12);
+  color: var(--color-rojo);
+}
+
+/* ---------- 12. MODAL ---------- */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s var(--ease);
+}
+
+.modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 34, 54, 0.6);
+}
+
+.modal__card {
+  position: relative;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.8rem, 5vw, 2.6rem);
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 24px 50px -20px rgba(20, 50, 79, 0.45);
+}
+
+.modal__title {
+  font-family: var(--font-display);
+  color: var(--color-azul);
+  font-size: 1.4rem;
+  margin-bottom: 1.1rem;
+}
+
+.modal__text {
+  color: var(--color-text-soft);
+  font-size: 0.93rem;
+  margin-bottom: 1.6rem;
+}
+
+/* Canvas de confeti: se dibuja solo un instante al confirmar */
+#confetti-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+}
+
+/* ---------- 13. FOOTER ---------- */
+.footer {
+  text-align: center;
+  padding: 2.2rem 1.25rem;
+  background: var(--color-azul);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.82rem;
+}
+
+/* ---------- 14. RESPONSIVE ---------- */
+@media (max-width: 480px) {
+  .countdown__grid {
+    gap: 0.5rem;
+  }
+
+  .countdown__unit {
+    padding: 0.85rem 0.2rem;
+  }
+
+  .rsvp__row {
+    grid-template-columns: 1fr;
+  }
+
+  .event__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guest-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

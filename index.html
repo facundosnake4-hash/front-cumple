@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cumpleaños de Irma · 12 de julio</title>
+  <meta name="description" content="Invitación al cumpleaños número 59 de Irma. Una tarde en familia, con mates, charlas y mucho cariño.">
+
+  <!-- Google Fonts: Playfair Display (display) + Poppins (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+<header class="navbar" id="site-header">
+  <div class="navbar__inner">
+    <span class="navbar__brand">Irma <span class="navbar__brand-dot">·</span> 59</span>
+
+    <div class="navbar__actions">
+      <a href="#rsvp-section" class="navbar__cta">
+        Confirmar
+      </a>
+
+      <a href="admin.html" class="navbar__admin">
+        Admin
+      </a>
+    </div>
+
+  </div>
+</header>
+  <!-- ============ HERO (sin foto, solo color y tipografía) ============ -->
+  <section class="hero" id="hero-section">
+    <div class="hero__content">
+      <p class="hero__eyebrow">Los mejores momentos siempre se comparten.</p>
+      <h1 class="hero__title">Te invito a celebrar<br>mi cumpleaños.</h1>
+
+      <div class="hero__name-block">
+        <span class="hero__name">IRMA</span>
+        <span class="hero__age">59 años</span>
+      </div>
+
+      <a href="#rsvp-section" class="btn btn--primary">Confirmar asistencia</a>
+    </div>
+  </section>
+
+  <!-- Divisor firma: sol de líneas doradas -->
+  <div class="divider" aria-hidden="true">
+    <svg class="divider__sun" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="60" cy="60" r="14" class="divider__sun-core"/>
+      <g class="divider__sun-rays">
+        <line x1="60" y1="4" x2="60" y2="26"/>
+        <line x1="60" y1="94" x2="60" y2="116"/>
+        <line x1="4" y1="60" x2="26" y2="60"/>
+        <line x1="94" y1="60" x2="116" y2="60"/>
+        <line x1="18" y1="18" x2="34" y2="34"/>
+        <line x1="86" y1="86" x2="102" y2="102"/>
+        <line x1="102" y1="18" x2="86" y2="34"/>
+        <line x1="34" y1="86" x2="18" y2="102"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- ============ CONTADOR REGRESIVO ============ -->
+  <section class="section countdown" id="countdown-section">
+    <div class="container">
+      <p class="section__eyebrow">Falta cada vez menos</p>
+      <h2 class="section__title">Cuenta regresiva</h2>
+
+      <div class="countdown__grid" id="countdown-timer-grid">
+        <div class="countdown__unit">
+          <span class="countdown__number" id="countdown-days">00</span>
+          <span class="countdown__label">Días</span>
+        </div>
+        <div class="countdown__unit">
+          <span class="countdown__number" id="countdown-hours">00</span>
+          <span class="countdown__label">Horas</span>
+        </div>
+        <div class="countdown__unit">
+          <span class="countdown__number" id="countdown-minutes">00</span>
+          <span class="countdown__label">Minutos</span>
+        </div>
+        <div class="countdown__unit">
+          <span class="countdown__number" id="countdown-seconds">00</span>
+          <span class="countdown__label">Segundos</span>
+        </div>
+      </div>
+
+      <p class="countdown__today" id="countdown-today-message" hidden>¡Hoy es el gran día!</p>
+    </div>
+  </section>
+
+  <!-- ============ MENSAJE PERSONAL ============ -->
+  <section class="section message">
+    <div class="container container--narrow">
+      <div class="message__card">
+        <p class="message__text">
+          Hay momentos que valen mucho más que cualquier regalo.
+          <br><br>
+          Por eso quiero compartir una tarde sencilla, con mates, galletitas, muchas charlas, risas y la mejor compañía.
+          <br><br>
+          Tu presencia hará que este cumpleaños sea aún más especial.
+          <br><br>
+          <strong>¡Te espero con mucha alegría!</strong>
+        </p>
+        <span class="message__signature">— Irma</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INFORMACIÓN DEL EVENTO ============ -->
+  <section class="section event" id="event-details-section">
+    <div class="container">
+      <p class="section__eyebrow">Todo lo que necesitás saber</p>
+      <h2 class="section__title">Detalles del encuentro</h2>
+
+      <div class="event__grid">
+        <div class="event__item">
+          <div class="event__icon" aria-hidden="true">📅</div>
+          <h3 class="event__label">Fecha</h3>
+          <p class="event__value">12 de julio de 2026</p>
+        </div>
+
+        <div class="event__item">
+          <div class="event__icon" aria-hidden="true">🕓</div>
+          <h3 class="event__label">Hora</h3>
+          <p class="event__value"><strong>16:00 hs</strong></p>
+        </div>
+
+        <div class="event__item">
+          <div class="event__icon" aria-hidden="true">⏳</div>
+          <h3 class="event__label">Duración</h3>
+          <p class="event__value">Hasta las <strong>17:15 hs</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- ============ FORMULARIO DE CONFIRMACIÓN ============ -->
+<section class="section rsvp" id="rsvp-section">
+  <div class="container container--narrow">
+
+    <p class="section__eyebrow">Contanos si venís</p>
+    <h2 class="section__title">Confirmá tu asistencia</h2>
+
+    <form class="rsvp__form" id="rsvp-form" novalidate>
+
+      <div class="rsvp__row">
+        <div class="rsvp__field">
+          <label for="rsvp-first-name">Nombre</label>
+          <input type="text" id="rsvp-first-name" name="nombre" required autocomplete="given-name">
+        </div>
+
+        <div class="rsvp__field">
+          <label for="rsvp-last-name">Apellido</label>
+          <input type="text" id="rsvp-last-name" name="apellido" required autocomplete="family-name">
+        </div>
+      </div>
+
+      <fieldset class="rsvp__field rsvp__fieldset">
+        <legend>¿Vas a asistir?</legend>
+        <div class="rsvp__options">
+          <label class="rsvp__option">
+            <input type="radio" name="asistencia" value="true" required>
+            <span>Sí, voy</span>
+          </label>
+
+          <label class="rsvp__option">
+            <input type="radio" name="asistencia" value="false" required>
+            <span>No puedo asistir</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="rsvp__field">
+        <label for="rsvp-gift">¿Qué regalo pensás llevar?</label>
+        <input type="text" id="rsvp-gift" name="regalo" placeholder="Ej: flores, libro, algo especial...">
+      </div>
+
+      <div class="rsvp__field">
+        <label for="rsvp-merienda">¿Qué merienda vas a traer?</label>
+        <input type="text" id="rsvp-merienda" name="merienda" placeholder="Ej: torta, galletitas, sandwiches...">
+      </div>
+
+      <button type="submit" class="btn btn--primary rsvp__submit">
+        Confirmar asistencia
+      </button>
+
+      <p class="rsvp__status" id="rsvp-status" role="status" aria-live="polite" hidden></p>
+
+    </form>
+  </div>
+</section>
+
+  <!-- ============ LISTA DE PARTICIPANTES CONFIRMADOS ============ -->
+  <section class="section guests" id="guests-section">
+    <div class="container container--narrow">
+      <p class="section__eyebrow">Ya confirmaron</p>
+      <h2 class="section__title">Quiénes nos acompañan</h2>
+
+      <div class="guests__list" id="guests-list" aria-live="polite">
+        <p class="guests__loading" id="guests-loading">Cargando invitados...</p>
+      </div>
+
+      <p class="guests__empty" id="guests-empty" hidden>Todavía no hay confirmaciones. ¡Sé el primero!</p>
+      <p class="guests__error" id="guests-error" hidden>No se pudo cargar la lista de invitados. Intentá recargar la página.</p>
+
+      <button type="button" class="btn btn--ghost" id="guests-refresh">Actualizar lista</button>
+    </div>
+  </section>
+
+  <!-- ============ MODAL DE CONFIRMACIÓN ============ -->
+  <div class="modal" id="thank-you-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="thank-you-modal-title">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__card">
+      <h3 class="modal__title" id="thank-you-modal-title">¡Muchas gracias por confirmar!</h3>
+      <p class="modal__text">
+        Será una enorme alegría compartir esta tarde con vos.
+        <br><br>
+        Prepará las ganas de charlar, tomar unos mates, comer unas ricas galletitas y pasar un lindo momento en familia.
+        <br><br>
+        <strong>¡Nos vemos muy pronto!</strong>
+      </p>
+      <button type="button" class="btn btn--primary" data-close-modal>Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Canvas liviano para el confeti (solo se dibuja un instante al confirmar) -->
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <p>Hecho con mucho cariño para celebrar un día muy especial.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

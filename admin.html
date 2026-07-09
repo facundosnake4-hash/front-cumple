@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin - Invitados</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <main class="admin-container">
+
+        <section class="login-card" id="login-section">
+
+            <h1>Panel Administrador</h1>
+
+            <p>Ingresá tus credenciales</p>
+
+            <input 
+                type="text" 
+                id="usuario"
+                placeholder="Usuario">
+
+            <input 
+                type="password" 
+                id="password"
+                placeholder="Contraseña">
+
+            <button id="login-btn">
+                Ingresar
+            </button>
+
+            <p id="login-message"></p>
+
+        </section>
+
+
+
+        <section class="panel" id="admin-panel" hidden>
+
+            <div class="panel-header">
+
+                <h1>Invitados</h1>
+
+                <button id="logout-btn">
+                    Cerrar sesión
+                </button>
+
+            </div>
+
+
+            <div id="invitados-lista">
+
+                <p>Cargando invitados...</p>
+
+            </div>
+
+            <button id="volver-btn" type="button">
+                Volver a la invitación
+            </button>
+
+        </section>
+
+    </main>
+
+
+<script src="admin.js"></script>
+
+</body>
+</html>
