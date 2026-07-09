@@ -1,4 +1,4 @@
-const API = "cumple-production-7320.up.railway.app";
+const API = "https://cumple-production-7320.up.railway.app";
 
 const loginSection = document.getElementById("login-section");
 const adminPanel = document.getElementById("admin-panel");

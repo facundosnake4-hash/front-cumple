@@ -1,4 +1,4 @@
-const API_BASE_URL = "cumple-production-7320.up.railway.app";
+const API_BASE_URL = "https://cumple-production-7320.up.railway.app";
 const INVITADOS_ENDPOINT = `${API_BASE_URL}/invitados`;
 
 document.addEventListener("DOMContentLoaded", () => {
